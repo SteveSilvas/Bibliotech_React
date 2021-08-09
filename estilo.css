@@ -1,0 +1,170 @@
+body{
+margin:0px;
+padding:0px;
+border:0px;
+font-family: arial, helvetica, sans-serif;
+background-color:black;
+}
+
+
+
+
+.cabecalho{
+	
+	width: 100%;
+	background-color: black;
+	color: white;
+	
+}
+.cabecalho a {
+	text-decoration:none;
+}
+
+.menubarra{
+	height: 60px;
+	padding: 10px;
+	marging:0px;
+	width: 100%;
+	background-color: #550000;
+	display:flex;
+
+	
+	
+
+}
+.menubarra ul{
+	list-style: none;
+
+}
+.menubarra li {
+	float:left;
+}
+
+.menubarra ul a {
+	margin:3px;
+	text-decoration:none;
+	border-radius:5px;
+	padding:3px;
+}
+
+.navertical {
+	background-color:#550000;
+	display: flex;
+	display: none;
+	
+}
+
+
+.menubarra li :hover{
+	background-color: #920000;
+	border-radius:5px;
+
+}	
+.navertical li :hover{
+	background-color: #920000;
+	border-radius:5px;
+}
+.menubarra ul :hover .navertical {
+	background-color: #550000;
+	display: block;
+	height:300px;
+	width: 200px;
+}
+
+
+
+
+
+
+
+.corpo{
+	
+	background-color: black;
+	margin-top:10px;
+	width: 100%;
+	float:left;
+}
+
+
+#centro{
+	
+	width: 60%;
+	float: left;
+	background-color: yellow;
+}
+
+#navegando{
+	width: 20%;
+	float: right;
+	background-color: #550000;
+}
+
+
+
+
+#menu{
+	
+	padding-left:20px;
+	padding-right:20px;
+	color:white;
+	width: 20%;
+	float: left;
+	background-color: #005500;
+
+}
+
+#menu ul{
+	list-style: none;
+	padding:0px
+
+}
+#menu  a {
+	text-decoration: none;
+}
+#menu ul li{
+	border: solid 2px  black;
+	background-color: green;
+	
+}
+
+
+
+.rodape{
+	padding: 20px;
+
+	hight:200px;
+	width: 100%;
+	background-color: #750000;}
+
+
+
+
+
+#entrar{
+	background-color: green;
+	
+	margin-left:33.3%;
+	margin-right:33.3%;
+	padding:20px;
+	
+	
+}
+#entrar input, label{
+	margin:10px;
+	border-radius:50px;
+	height: 35px;
+}
+#cadastrar{
+	background-color: green;
+	
+	margin-left:33.3%;
+	margin-right:33.3%;
+	padding:20px;
+	
+	
+}
+#cadastrar input, label{
+	margin:10px;
+	border-radius:50px;
+	height: 35px;
+}
