@@ -17,34 +17,30 @@ class Menu extends LitElement {
                         <h1 class="titulo">Nossa Bib</h1>
                     </div>
 
-                    <h1>fa fa-link</h1>
-                    
+                    ${this.getStyle()}
+        `;        
+    }
 
-
-${this.getStyle()}
-                `;
-               
-        }
     public getStyle(){
         return html `
             <style>
-                    .header{
-                        background-color: #0d5db8;
-                        padding: 1vh;
-                        display:flex;
-                        flex-wrap: wrap;
-                    }
-                    .logo{
-                        align-self: center;
-                        margin-left: 2%;
-                    }
-                    .titulo{
-                        display:flex;
-                        justify-content:center;
-                        color: white;
-                        flex-grow:1;
-                        
-                    }
+                .header{
+                    background-color: var(--cor-principal);
+                    padding: 1vh;
+                    display:flex;
+                    flex-wrap: wrap;
+                }
+                .logo{
+                    align-self: center;
+                    margin-left: 2%;
+                }
+                .titulo{
+                    display:flex;
+                    justify-content:center;
+                    color: white;
+                    flex-grow:1;
+                    
+                }
             </style>
         `
     }
