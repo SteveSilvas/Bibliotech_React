@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://SteveSilvas.github.io/Bibliotech_React",
   "private": true,
+  "proxy": "https://hello-bib.up.railway.app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
