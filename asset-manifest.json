@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Bibliotech_React/static/css/main.073c9b0a.css",
-    "main.js": "/Bibliotech_React/static/js/main.8f3a28f5.js",
+    "main.css": "/Bibliotech_React/static/css/main.18cf2676.css",
+    "main.js": "/Bibliotech_React/static/js/main.f66cf8f9.js",
     "static/js/787.c511ba91.chunk.js": "/Bibliotech_React/static/js/787.c511ba91.chunk.js",
     "index.html": "/Bibliotech_React/index.html",
-    "main.073c9b0a.css.map": "/Bibliotech_React/static/css/main.073c9b0a.css.map",
-    "main.8f3a28f5.js.map": "/Bibliotech_React/static/js/main.8f3a28f5.js.map",
+    "main.18cf2676.css.map": "/Bibliotech_React/static/css/main.18cf2676.css.map",
+    "main.f66cf8f9.js.map": "/Bibliotech_React/static/js/main.f66cf8f9.js.map",
     "787.c511ba91.chunk.js.map": "/Bibliotech_React/static/js/787.c511ba91.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.8f3a28f5.js"
+    "static/css/main.18cf2676.css",
+    "static/js/main.f66cf8f9.js"
   ]
 }
