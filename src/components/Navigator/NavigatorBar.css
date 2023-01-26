@@ -1,0 +1,56 @@
+
+.NavigatorBar{
+    width: 100%;
+    background-color: var(--laranja);
+    display: flex;
+}
+
+.Link {    
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: end;
+    margin: 0px 1px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: solid 3px  rgba(128, 128, 128, 0.223);
+    transition: 0.3s;
+}
+
+.Link:hover {
+    transition: 0.3s;
+    border-bottom: solid 3px  var(--azul-dois);
+}
+
+.FigureLogo{
+    background-color: black;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 4px;
+}
+
+.IconLogo{
+    font-size: 1.5rem;
+    color: var(--azul-tres);
+    transition: 0.3s;
+}
+
+.IconLogo:hover{
+    transition: 0.3s;
+    transform: scale(1.3);
+    color: var(--azul-dois);
+}
+
+.LeftNav{
+    flex-grow: 4;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.RightNav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}

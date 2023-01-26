@@ -1,0 +1,63 @@
+.RegisterPage {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.RegisterSection{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 50%;
+    border: solid 1px var(--laranja);
+    border-radius: 4px;
+    margin-top: 5%;
+}
+
+.RegisterTitle{
+    font-size: 2rem;
+    background-color: var(--azul-dois);
+    border-bottom: 2px solid var(--laranja);
+    color: black;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.RegisterForm{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.RegisterFormRow{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10%;
+}
+
+.Input{
+    width: 60%;
+    height: 1.5rem;
+}
+
+.RegisterButton{
+    background-color: var(--azul-tres);
+    border: solid 1px var(--azul-dois);
+    border-radius: 4px;
+    padding: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.5s;
+    width: 50%;
+}
+
+.RegisterButton:hover{
+    background-color: var(--azul-dois);
+    border: solid 1px var(--azul-tres);
+    transition: 0.3s;
+}

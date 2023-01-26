@@ -1,0 +1,6 @@
+.Homepage{
+    border: solid 1px var(--laranja);
+    margin-top: 10px;
+    padding: 5%;
+    color: darkgray;
+}

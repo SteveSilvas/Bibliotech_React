@@ -1,0 +1,10 @@
+.GenericInput {
+    background-color: rgba(0, 0, 0, 0);
+
+    border-top: 0ch;
+    border-right: 0ch;
+    border-left: 0ch;
+    border-bottom: 1px solid #c3c3c3;
+
+    color: #c3c3c3;
+}
