@@ -13,7 +13,7 @@ const NavigatorBar = (props: any) => {
             <figcaption className="FigureLogo">
                 <FontAwesomeIcon icon={faBookAtlas} className="IconLogo" />
             </figcaption>
-            {props.isLoggedIn ? <NavigatorPrivate/> : <NavigatorPublic/>}
+            {props.authenticated ? <NavigatorPrivate/> : <NavigatorPublic/>}
         </section>
     );
 }

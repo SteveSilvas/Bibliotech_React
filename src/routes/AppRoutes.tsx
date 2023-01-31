@@ -17,16 +17,23 @@ import Books from '../Pages/PagesPrivates/Books/Books';
 
 const AppRoutes = (props: any) => {
 
+    function handleChangeUserLogged(user:any){
+        props.setUserLogged(user);
+    }
+
+    function handlesetAuthenticated(auth:boolean){
+        props.setAuthenticated(auth);
+    }
 
     return (
         <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/login' element={<LoginPage setIsLoggedIn={props.setIsLoggedIn} />} />
+            <Route path='/login' element={<LoginPage setUserLogged={handleChangeUserLogged} setAuthenticated={handlesetAuthenticated}/>} />
             <Route path='/register' element={<RegisterPage />} />
 
             <Route path='/app' element={<MainPage />} />
             <Route path='/app/profile' element={<Profile />} />
-            <Route path='/app/logout' element={<LogoutPage />} />
+            <Route path='/app/logout' element={<LogoutPage  setAuthenticated={handlesetAuthenticated}/>} />
             <Route path='/app/books' element={<Books />} />
 
         </Routes>

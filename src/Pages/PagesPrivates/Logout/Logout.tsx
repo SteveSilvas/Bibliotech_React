@@ -26,7 +26,7 @@ const LogoutPage = (props: any) => {
         //     onFailure: handleLogoutFailure,
         // })
         const onLogout=()=>{
-            alert("onlogout")
+            props.setAuthenticated(false);
         }
        
         return (
