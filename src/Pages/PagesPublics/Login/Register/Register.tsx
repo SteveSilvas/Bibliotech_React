@@ -1,11 +1,12 @@
 import { useState } from "react";
-import GenericButton from "../../components/Buttons/GenericButton/GenericButton";
-import GenericInput from "../../components/Input/GenericInput/GenericInput";
+import React from 'react';
+import GenericButton from "../../../../components/Buttons/GenericButton/GenericButton";
+import GenericInput from "../../../../components/Input/GenericInput/GenericInput";
 import "./Register.css";
-import api from '../../services/Api';
-import UserType from "../../@Types/UserType";
+import api from '../../../../services/Api';
+import UserType from "../../../../@Types/UserType";
 // import Validator from "../../functions/validators/Validators";
-import Converters from "../../functions/Converters";
+import Converters from "../../../../functions/Converters";
 const Register = () => {
     const dateMinimum = new Date(1900, 1, 1);
 

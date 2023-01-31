@@ -1,12 +1,23 @@
+import React from "react";
+import GenericButton from "../../../components/Buttons/GenericButton/GenericButton";
+import GenericInput from "../../../components/Input/GenericInput/GenericInput";
+import "./Login.css";
+import { GoogleLogin } from '@react-oauth/google';
 
-import GenericButton from "../../components/Buttons/GenericButton/GenericButton";
-import GenericInput from "../../components/Input/GenericInput/GenericInput";
-import "./Login.css"
-const LoginPage = () => {
+const LoginPage = (props:any) => {
+ 
+        function handleStartLogin() {
+            alert("changeValue");
+        }
 
-    function handleStartLogin() {
-        alert("changeValue");
-    }
+        function successLogin(){
+            // window.location.href="/app/profile";
+            props.setIsLoggedIn(true);
+        }
+
+        function errorLogin(){
+            props.setIsLoggedIn(false);
+        }
 
     return (
         <div className="LoginPage">
@@ -25,7 +36,12 @@ const LoginPage = () => {
                         <a className="LinkPassword" href="google.com">Esqueci minha senha</a>
                     </div>
                     <div className="LoginFormRow">
-                        <GenericButton className="LoginButton LoginButtonGoogle" text="Entrar com Google" />
+                        {/* <GenericButton className="LoginButton LoginButtonGoogle" text="Entrar com Google" /> */}
+                        <GoogleLogin
+                            // buttonText="Entrar com Google"
+                            onSuccess={successLogin}
+                            onError={errorLogin}
+                        />
                     </div>
 
                     <nav className="LoginFormRow">

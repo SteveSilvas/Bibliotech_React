@@ -1,0 +1,23 @@
+.AddBooksPage{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AddBooksSection{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border: solid 1px var(--laranja);
+    border-radius: 4px;
+    margin-top: 2%;
+}
+
+.AddBookFormRow{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10%;
+}

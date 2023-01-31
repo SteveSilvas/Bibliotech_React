@@ -1,0 +1,20 @@
+.GenericList{
+    border: 1px solid var(--laranja);
+}
+
+.GenericListHeader{
+    background-color: var(--azul-dois);
+    font-weight: bold;
+    color:black;
+    display: flex;
+}
+
+.FieldList{
+    overflow: hidden;
+    flex-grow: 1;
+    border: 1px solid #c3c3c3;
+}
+
+.GenericListRow{
+    display: flex;
+}

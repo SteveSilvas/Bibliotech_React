@@ -1,6 +1,6 @@
 import InputElement from "../../../@Types/InputElement";
 import "./GenericInput.css";
-
+import React from 'react';
 const GenericInput = (props: InputElement) => {
     return (
         <>

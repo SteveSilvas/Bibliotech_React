@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 .Row{
@@ -31,7 +33,7 @@
     display: flex;
     justify-content: space-around;
     border: 1px solid var(--marrom);
-    
+    align-items: center;
 }
 
 .TitleRow{
@@ -42,4 +44,19 @@
 
 .FieldCategory{
     width: 50%;
+}
+
+.TrashIcon{
+    color: red;
+}
+
+.TrashIcon:hover{
+    color: rgb(254, 66, 66);
+    cursor: pointer;
+}
+
+.AddCategory{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }

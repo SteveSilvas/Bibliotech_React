@@ -1,0 +1,16 @@
+.GenericButton{
+    background-color: var(--azul-tres);
+    border: solid 1px var(--azul-dois);
+    border-radius: 4px;
+    padding: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.5s;
+}
+
+.GenericButton:hover{
+    background-color: var(--azul-dois);
+    border: solid 1px var(--azul-tres);
+    transition: 0.3s;
+    cursor: pointer;
+}
