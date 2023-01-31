@@ -1,15 +1,15 @@
 {
-  "files": {
-    "main.css": "/Bibliotech_React/static/css/main.18cf2676.css",
-    "main.js": "/Bibliotech_React/static/js/main.f66cf8f9.js",
-    "static/js/787.c511ba91.chunk.js": "/Bibliotech_React/static/js/787.c511ba91.chunk.js",
-    "index.html": "/Bibliotech_React/index.html",
-    "main.18cf2676.css.map": "/Bibliotech_React/static/css/main.18cf2676.css.map",
-    "main.f66cf8f9.js.map": "/Bibliotech_React/static/js/main.f66cf8f9.js.map",
-    "787.c511ba91.chunk.js.map": "/Bibliotech_React/static/js/787.c511ba91.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.18cf2676.css",
-    "static/js/main.f66cf8f9.js"
-  ]
+  "main.css": "/Bibliotech_React/static/css/main.8d0575f3.chunk.css",
+  "main.js": "/Bibliotech_React/static/js/main.10a4c203.chunk.js",
+  "main.js.map": "/Bibliotech_React/static/js/main.10a4c203.chunk.js.map",
+  "static/js/1.ef8aa2fe.chunk.js": "/Bibliotech_React/static/js/1.ef8aa2fe.chunk.js",
+  "static/js/1.ef8aa2fe.chunk.js.map": "/Bibliotech_React/static/js/1.ef8aa2fe.chunk.js.map",
+  "static/js/2.4551d898.chunk.js": "/Bibliotech_React/static/js/2.4551d898.chunk.js",
+  "static/js/2.4551d898.chunk.js.map": "/Bibliotech_React/static/js/2.4551d898.chunk.js.map",
+  "runtime~main.js": "/Bibliotech_React/static/js/runtime~main.7714955c.js",
+  "runtime~main.js.map": "/Bibliotech_React/static/js/runtime~main.7714955c.js.map",
+  "static/css/main.8d0575f3.chunk.css.map": "/Bibliotech_React/static/css/main.8d0575f3.chunk.css.map",
+  "index.html": "/Bibliotech_React/index.html",
+  "precache-manifest.35f63667c949c5659ae19025d2390243.js": "/Bibliotech_React/precache-manifest.35f63667c949c5659ae19025d2390243.js",
+  "service-worker.js": "/Bibliotech_React/service-worker.js"
 }
