@@ -3,7 +3,7 @@ import React from 'react';
 import "./GenericButton.css";
 
 const GenericButton = (props:ButtonElement)=>{
-  const classe:string = props.className === undefined ? "GenericButton" : props.className;
+  const classe:string = props.className === undefined ? "GenericButton" : `GenericButton ${props.className}`;
     return (
         <>
             <button

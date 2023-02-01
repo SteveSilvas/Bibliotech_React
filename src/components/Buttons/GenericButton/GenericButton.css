@@ -14,3 +14,24 @@
     transition: 0.3s;
     cursor: pointer;
 }
+
+.Confirm{
+    background-color: rgb(92, 148, 7);
+    border: solid 1px var(--azul-tres);
+}
+
+.Confirm:hover{
+    background-color: rgb(153, 230, 37);
+    border: solid 1px var(--azul-tres);
+}
+
+
+.Cancel{
+    background-color: red;
+    border: solid 1px var(--azul-tres);
+}
+
+.Cancel:hover{
+    background-color: rgb(255, 102, 102);
+    border: solid 1px var(--azul-tres);
+}
