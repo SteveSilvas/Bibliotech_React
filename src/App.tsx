@@ -2,13 +2,17 @@ import './App.css';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import NavigatorBar from './components/Navigator/NavigatorBar';
 import AppRoutes from './routes/AppRoutes';
-import { useState} from 'react';
+import { useEffect, useState} from 'react';
 import React from 'react';
 
 function App() {
     const [authenticated , setAuthenticated ] = useState<boolean>();
     const [userLogged, setUserLogged] = useState<any>(null);
     const clientId = process.env.REACT_APP_CLIENT_ID;
+
+    useEffect(()=>{
+        console.log('authenticated:', authenticated)
+    }, [])
 
     const setUser = (user:any)=>{
         setAuthenticated(true);

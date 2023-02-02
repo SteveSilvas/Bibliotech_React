@@ -1,0 +1,60 @@
+.success{
+    background-color: rgb(12, 190, 12);
+}
+/* .success[button]:hover{
+    background-color: rgb(47, 238, 47);
+} */
+
+.error{
+    background-color: red;
+}
+
+/* .error button:hover{
+    background-color: rgb(240, 53, 53);
+} */
+
+.box {
+    position: absolute;
+    background-color: #c3c3c3cb;
+    width: 100vw;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel {
+    width: 30rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: 0.5s;
+}
+
+.message {
+    font-size: 2rem;
+    color: white;
+}
+
+.confirm {
+    border: 1px solid white;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 10rem;
+    color: white;
+}
+
+
+.shadow {
+    border: 2px solid black;
+    border-radius: 12px 12px 0px 12px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.485);
+    transition: 0.5s;
+}
+
+.shadow:hover {
+    box-shadow: 0px 0px 20px 0px rgba(63, 63, 63, 0.248);
+    transition: 0.5s;
+}

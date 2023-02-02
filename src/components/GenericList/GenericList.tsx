@@ -8,11 +8,11 @@ const GenericList = (props: any) => {
 
     const RenderFacets = () => {
         let facetsComponent: any = [];
-        facets.map((facet:FacetsType)=>{
+        facets.map((facet:FacetsType, i:number)=>{
             let classeField:string = "FieldList " + facet.Width;
             
             facetsComponent.push(
-                <span className={classeField}>{facet.Name}</span>
+                <span className={classeField} key={i}>{facet.Name}</span>
             );
         })
 
@@ -29,7 +29,7 @@ const GenericList = (props: any) => {
                  <span className='FieldList'>{data.Id}</span>
                  <span className='FieldList'>{data.Title}</span>
                  <span className='FieldList'>{data.Autor}</span>
-                 <span className='FieldList'>{data.Category.Description}</span>
+                 <span className='FieldList'>{data.CategoryId}</span>
                  <span className='FieldList'>{data.CreationDate}</span>
                  <span className='FieldList'>{data.CreationLocality}</span>
             </div>

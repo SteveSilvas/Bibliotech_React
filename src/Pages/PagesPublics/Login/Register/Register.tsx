@@ -28,7 +28,9 @@ const Register = () => {
         if(!validateFields(user)) return;
 
         api.post('users/add', user)
-        .then(()=>{
+        .then((res)=>{
+            console.log("Salvo com sucesso")
+            alert(res)
             alert ("Usuário salvo com sucesso");
         })
         .catch((err) => console.log(err))

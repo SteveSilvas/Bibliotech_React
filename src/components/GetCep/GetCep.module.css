@@ -1,0 +1,14 @@
+.buttonCEP{
+    background-color:var(--cor-quatro);
+    color: aliceblue;
+    border: 2px solid var(--cor-quatro);
+    font-size: 1em;
+    padding: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .buttonSave:hover{
+    border: 2px solid var(--cor-dois);
+    transform: scale(1.1);
+  }

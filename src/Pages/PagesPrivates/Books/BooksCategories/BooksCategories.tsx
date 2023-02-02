@@ -7,12 +7,16 @@ import { faSquarePlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import CategoryType from '../../../../@Types/CategoryType';
 import Panel from '../../../../components/Panel/Panel';
 import GenericButton from '../../../../components/Buttons/GenericButton/GenericButton';
+import MessageModalType from '../../../../@Types/MessageModalType';
+import SuccessModal from '../../../../components/Notifications/SuccessModal';
+import ErrorModal from '../../../../components/Notifications/ErrorModal';
 export default function Categories() {
 
     const [category, setCategory] = useState<CategoryType>();
     const [categoryList, setCategoryList] = useState<CategoryType[]>();
     const [showAdd, setShowAdd] = useState<boolean>(false);
-
+    const [messageModal, setMessageModal] = useState<MessageModalType>()
+  
     useEffect(() => {
         requestCategories();
     }, []);
@@ -24,10 +28,13 @@ export default function Categories() {
             Description: category
         })
             .then((resp) => {
-                alert("success")
-                console.log(resp);
                 requestCategories();
-                setShowAdd(true);
+                setMessageModal({
+                    showModal:true,
+                    textMessage: resp.data,
+                    typeMessage: 1,
+                })
+                setShowAdd(false);
             })
             .catch((err) => console.log(err))
     }
@@ -50,8 +57,12 @@ export default function Categories() {
                 data: { Id: id }
             })
             .then((resp) => {
-                alert("success")
-                console.log(resp);
+                setMessageModal({
+                    showModal:true,
+                    textMessage: resp.data,
+                    typeMessage: 1,
+                });
+                requestCategories();
             })
             .catch((err) => console.log(err))
     }
@@ -100,6 +111,44 @@ export default function Categories() {
         );
     }
 
+    const renderModal = () =>{
+        if(!messageModal) return;
+        if(messageModal.showModal){
+            return messageModal.textMessage ?
+             renderSuccessModal()
+             :
+             renderErrorModal();
+        }
+    }
+
+    const renderSuccessModal = ()=>{
+        if(!messageModal) return;
+            return (
+                <SuccessModal
+                    hideModal={hideModalHandler}
+                    textMessage={messageModal.textMessage}
+                />
+            );
+    }
+
+    const renderErrorModal = ()=>{
+        if(!messageModal) return;
+
+        return (
+            <ErrorModal
+                hideModal={hideModalHandler}
+                textMessage={messageModal.textMessage}
+            />
+        );
+    }
+
+    const hideModalHandler = ()=>{
+        setMessageModal({
+            showModal: false,
+            textMessage: "",
+            typeMessage: 0
+        })
+    }
     function renderAddCategory() {
         return (
             <Panel title="Cadastrar Categorias">
@@ -125,6 +174,7 @@ export default function Categories() {
     }
     return (
         <div className='Root'>
+            {renderModal()}
             {!showAdd && renderCategoriesList()}
             {showAdd && renderAddCategory()}
 
