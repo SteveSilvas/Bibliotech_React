@@ -10,18 +10,15 @@ import GenericButton from '../../../../components/Buttons/GenericButton/GenericB
 import MessageModalType from '../../../../@Types/MessageModalType';
 import SuccessModal from '../../../../components/Notifications/SuccessModal';
 import ErrorModal from '../../../../components/Notifications/ErrorModal';
-export default function Categories() {
+export default function Categories(props: any) {
 
     const [category, setCategory] = useState<CategoryType>();
     const [categoryList, setCategoryList] = useState<CategoryType[]>();
     const [showAdd, setShowAdd] = useState<boolean>(false);
-    const [messageModal, setMessageModal] = useState<MessageModalType>()
-  
+
     useEffect(() => {
         requestCategories();
     }, []);
-
-
 
     function saveCategory(): void {
         api.post('category/add', {
@@ -29,14 +26,18 @@ export default function Categories() {
         })
             .then((resp) => {
                 requestCategories();
-                setMessageModal({
-                    showModal:true,
+                props.setNotificationsModal({
+                    showModal: true,
                     textMessage: resp.data,
                     typeMessage: 1,
                 })
                 setShowAdd(false);
             })
-            .catch((err) => console.log(err))
+            .catch((err) => props.setNotificationsModal({
+                showModal: true,
+                textMessage: err,
+                typeMessage: 0,
+            }))
     }
 
     async function requestCategories() {
@@ -49,22 +50,31 @@ export default function Categories() {
             .then((resp) => {
                 setCategoryList(resp.data);
             })
-            .catch((ex) => console.log);
+            .catch((err) => props.setNotificationsModal({
+                showModal: true,
+                textMessage: err,
+                typeMessage: 0,
+            }));
     }
 
     async function onDelete(id: number) {
         api.delete("/category/delete", {
-                data: { Id: id }
-            })
+            data: { Id: id }
+        })
             .then((resp) => {
-                setMessageModal({
-                    showModal:true,
+                props.setNotificationsModal({
+                    showModal: true,
                     textMessage: resp.data,
                     typeMessage: 1,
                 });
                 requestCategories();
             })
-            .catch((err) => console.log(err))
+            .catch((err) =>
+                props.setNotificationsModal({
+                    showModal: true,
+                    textMessage: err,
+                    typeMessage: 0,
+                }))
     }
 
     function handleChangeCategory(e: any) {
@@ -76,7 +86,7 @@ export default function Categories() {
 
         let elementos: any = [];
         elementos.push(
-            <div className='CategoryRow TitleRow'>
+            <div className='CategoryRow TitleRow'key={0}>
                 <span className='FieldCategory'>ID</span>
                 <span className='FieldCategory'>Descrição</span>
                 <span className='FieldCategory'>Excluir</span>
@@ -85,7 +95,7 @@ export default function Categories() {
 
         categoryList.map((cat, i) => {
             const categoryElement = (
-                <div className='CategoryRow' key={i}>
+                <div className='CategoryRow' key={cat.Id | i}>
                     <span className='FieldCategory'>{cat.Id}</span>
                     <span className='FieldCategory'>{cat.Description}</span>
                     <FontAwesomeIcon
@@ -111,44 +121,6 @@ export default function Categories() {
         );
     }
 
-    const renderModal = () =>{
-        if(!messageModal) return;
-        if(messageModal.showModal){
-            return messageModal.textMessage ?
-             renderSuccessModal()
-             :
-             renderErrorModal();
-        }
-    }
-
-    const renderSuccessModal = ()=>{
-        if(!messageModal) return;
-            return (
-                <SuccessModal
-                    hideModal={hideModalHandler}
-                    textMessage={messageModal.textMessage}
-                />
-            );
-    }
-
-    const renderErrorModal = ()=>{
-        if(!messageModal) return;
-
-        return (
-            <ErrorModal
-                hideModal={hideModalHandler}
-                textMessage={messageModal.textMessage}
-            />
-        );
-    }
-
-    const hideModalHandler = ()=>{
-        setMessageModal({
-            showModal: false,
-            textMessage: "",
-            typeMessage: 0
-        })
-    }
     function renderAddCategory() {
         return (
             <Panel title="Cadastrar Categorias">
@@ -169,12 +141,13 @@ export default function Categories() {
     function handleShowAdd() {
         setShowAdd(true);
     }
+    
     function handleHideAdd() {
         setShowAdd(false);
     }
+
     return (
         <div className='Root'>
-            {renderModal()}
             {!showAdd && renderCategoriesList()}
             {showAdd && renderAddCategory()}
 

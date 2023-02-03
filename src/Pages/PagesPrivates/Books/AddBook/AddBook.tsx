@@ -56,10 +56,19 @@ const AddBook = (props: any) => {
         let data = buildDatas();
         api.post("/books/add", {data})
             .then((resp) => {
-                alert("sucesso")
-                console.log(resp);
+                props.setNotificationsModal({
+                    showModal:true,
+                    textMessage: resp.data,
+                    typeMessage: 1,
+                });
+                props.closeAddBook();
             })
-            .catch((ex) => console.log);
+            .catch((err) => 
+            props.setNotificationsModal({
+                showModal:true,
+                textMessage: err,
+                typeMessage: 0,
+            }));
     }
 
     function buildDatas(){

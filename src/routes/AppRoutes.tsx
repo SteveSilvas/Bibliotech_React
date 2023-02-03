@@ -34,7 +34,7 @@ const AppRoutes = (props: any) => {
             <Route path='/app' element={<MainPage />} />
             <Route path='/app/profile' element={<Profile />} />
             <Route path='/app/logout' element={<LogoutPage  setAuthenticated={handlesetAuthenticated}/>} />
-            <Route path='/app/books' element={<Books />} />
+            <Route path='/app/books' element={<Books setNotificationsModal={props.setNotificationsModal}/>} />
 
         </Routes>
     );
