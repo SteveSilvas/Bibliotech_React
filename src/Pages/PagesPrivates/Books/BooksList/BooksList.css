@@ -1,11 +1,15 @@
 .BooksList{
-    width: 100%;
+    width: 90%;
 
     display: flex;
     flex-direction: column;
     border: solid 1px var(--laranja);
     border-radius: 4px;
     margin-top: 2%;
+}
+
+.BooksBox{
+    display: flex;
 }
 
 .BooksListFigure{
@@ -16,11 +20,11 @@
     margin: 1rem;
     box-shadow: 0.3rem 0.3rem  1rem var(--laranja);
     transition: 0.2s;
-    width: 30rem;
+    width: 20rem;
 }
 
 .BooksListFigure:hover{
     box-shadow: 0.3rem 0.3rem  1rem var(--azul-dois);
     transition: 0.2s;
-    width: 30rem;
+    width: 20rem;
 }

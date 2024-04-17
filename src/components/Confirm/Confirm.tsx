@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Confirm.css"
 import GenericButton from "../Buttons/GenericButton/GenericButton";
 import Panel from "../Panel/Panel";
+import BlockBox from "../BlockBox/BlockBox";
 
 const Confirm = (props: any) => {
 
@@ -19,7 +20,7 @@ const Confirm = (props: any) => {
 
 
     return showThis ?
-        <div className="ConfirmModalRoot">
+        <BlockBox>
             <div className="ConfirmModalPanel">
                 <Panel title={props.message} >
                     <nav>
@@ -28,7 +29,7 @@ const Confirm = (props: any) => {
                     </nav>
                 </Panel>
             </div>
-        </div>
+        </BlockBox>
         : <></>;
     ;
 }

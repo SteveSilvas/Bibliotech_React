@@ -28,7 +28,7 @@ const AddBook = (props: any) => {
             .then((resp) => {
                 setCategories(resp.data);
             })
-            .catch((ex) => console.log);
+            .catch((err) => console.log(err));
     }
 
 

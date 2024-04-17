@@ -7,8 +7,10 @@ import api from '../../../../services/Api';
 import UserType from "../../../../@Types/UserType";
 // import Validator from "../../functions/validators/Validators";
 import Converters from "../../../../functions/Converters";
-const Register = () => {
+import { useNavigate } from "react-router-dom";
+const Register = (props:any) => {
     const dateMinimum = new Date(1900, 1, 1);
+    const navigate = useNavigate();
 
     const [name, setName] = useState<string>("");
     const [birth, setBirth] = useState<Date>(dateMinimum);
@@ -29,11 +31,22 @@ const Register = () => {
 
         api.post('users/add', user)
         .then((res)=>{
-            console.log("Salvo com sucesso")
-            alert(res)
-            alert ("Usuário salvo com sucesso");
+
+            navigate("/login", { replace: true })
+            
+            props.setNotificationsModal({
+                showModal: true,
+                textMessage: res.data,
+                typeMessage: 1,
+            });
+
         })
-        .catch((err) => console.log(err))
+        .catch((err) => 
+        props.setNotificationsModal({
+            showModal: true,
+            textMessage: err,
+            typeMessage: 0,
+        }))
     }
 
     function validateFields(user: UserType):boolean{

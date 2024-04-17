@@ -14,11 +14,21 @@ import HomePage from '../Pages/HomePage/Homepage';
 import LoginPage from '../Pages/PagesPublics/Login/Login';
 import RegisterPage from '../Pages/PagesPublics/Login/Register/Register';
 import Books from '../Pages/PagesPrivates/Books/Books';
+import { useNavigate } from "react-router-dom";
 
 const AppRoutes = (props: any) => {
+    const navigate = useNavigate();
 
     function handleChangeUserLogged(user:any){
         props.setUserLogged(user);
+
+        props.setNotificationsModal({
+            showModal: true,
+            textMessage: `Olá ${user.Name}`,
+            typeMessage: 1,
+        });
+
+        navigate("/app");
     }
 
     function handlesetAuthenticated(auth:boolean){
@@ -29,7 +39,7 @@ const AppRoutes = (props: any) => {
         <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/login' element={<LoginPage setUserLogged={handleChangeUserLogged} setAuthenticated={handlesetAuthenticated}/>} />
-            <Route path='/register' element={<RegisterPage />} />
+            <Route path='/register' element={<RegisterPage setNotificationsModal={props.setNotificationsModal}/>} />
 
             <Route path='/app' element={<MainPage />} />
             <Route path='/app/profile' element={<Profile />} />

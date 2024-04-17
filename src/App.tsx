@@ -36,9 +36,6 @@ function App() {
     }
 
     const setNotificationsModalHandler = (messageModal: any) => {
-        console.log('-------:')
-        console.log(messageModal);
-        console.log('-------:')
         setNotificationsModal(messageModal)
     }
 

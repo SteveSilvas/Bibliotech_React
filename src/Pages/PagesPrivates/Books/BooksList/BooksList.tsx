@@ -9,15 +9,6 @@ import GenericList from "../../../../components/GenericList/GenericList";
 const BooksList = (props: any) => {
     const [booksList, setBooksList] = useState();
 
-    const facets = [
-        { width: "1", name: "ID" },
-        { width: "1", name: "Titulo" },
-        { width: "1", name: "Autor" },
-        { width: "1", name: "Categoria" },
-        { width: "1", name: "Data de Criação" },
-        { width: "1", name: "Origem de Criação" },
-    ]
-
     function requestBooks() {
         api.get("/books", {
             headers: {
@@ -61,23 +52,19 @@ const BooksList = (props: any) => {
         let array: [BookType] = booksList;
         let booksComponents: any = [];
         array.map((book: any, i:number) => {
+            let category = book.Category;
             booksComponents.push(
-                <div key={i}>
-                    <BookFigure
+                    <BookFigure key={i}
                         Id={book.Id}
                         Title={book.Title}
                         Autor={book.Autor}
-                        Category={book.Category}
+                        Category={category != undefined ? category.Description : ""}
                         CategoryId={book.CategoryId}
                         CreationDate={book.CreationDate}
                         CreationLocality={book.CreationLocality}
                     />
-                </div>
             )
         });
-
-
-
 
         return booksComponents;
 
@@ -100,7 +87,9 @@ const BooksList = (props: any) => {
     return (
         <Panel className="BooksList" title="Lista de Livros" showAdd={true} onClickAdd={props.enableAddIcon}>
             {/* <GenericList facets={facets} datas={booksList} onDelete={onDelete}/> */}
-            {renderBooksList()}
+            <div className="BooksBox">
+                {renderBooksList()}
+            </div>
         </Panel>
     );
 }

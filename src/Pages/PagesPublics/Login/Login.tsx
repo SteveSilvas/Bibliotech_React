@@ -21,20 +21,13 @@ const LoginPage = (props: any) => {
             .then((res)=>{
                 props.setUserLogged(res.data);
             })
-            .catch((err) => console.log(err))
-
-        } catch (error) {
+            .catch((err) => 
             
-        }
-    }
-
-    function requestByEmail(){
-        try {
-            api.get(`/users?email=${email}`)
-            .then((res)=>{
-                alert ("Usuário salvo com sucesso"+res);
-            })
-            .catch((err) => console.log(err))
+            props.setNotificationsModal({
+                showModal: true,
+                textMessage: err,
+                typeMessage: 0,
+            }))
 
         } catch (error) {
             
@@ -50,12 +43,18 @@ const LoginPage = (props: any) => {
     }
 
     function successLogin() {
-        // window.location.href="/app/profile";
+        props.setUserLogged({Name: "logado com google"});
         props.setAuthenticated(true);
     }
 
     function errorLogin() {
         props.setAuthenticated(false);
+
+        props.setNotificationsModal({
+            showModal: true,
+            textMessage: "Erro ao logar com google",
+            typeMessage: 0,
+        });
     }
 
     return (
